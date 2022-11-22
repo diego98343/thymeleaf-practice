@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create Event</h1>
+<form method="post"  th:action="@{/create}" th:object="${newEvent}" >
+    <div>
+        <label>Event Name
+            <input type="text"  th:field="*{name}">
+        </label>
+    </div>
+    <div>
+        <label> Description
+            <input type="text"   th:field="*{eventDetails.description}" >
+        </label>
+    </div>
+    <div>
+        <label> Email
+            <input type="text"  th:field="*{eventDetails.contactEmail}"    >
+        </label>
+    </div>
+
+    <div>
+     <label>Type
+         <select   th:field="*{eventCategory}"  >
+             <option th:each="type :${eventCategoryy}"
+                     th:value="${type.id}"
+                     th:text="${type.name}"
+
+             ></option>
+
+         </select>
+     </label>
+    </div>
+
+    <div>
+        <input type="submit" value="CreateEvent">
+    </div>
+
+</form>
+<a href="/">go back to Menu</a>
+<a href="/events">go back to All Events</a>
+</body>
+</html>

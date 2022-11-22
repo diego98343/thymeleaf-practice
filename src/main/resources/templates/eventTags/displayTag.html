@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>TAGS</h1>
+<nav>
+  <ul>
+    <li><a href="/createTag">Create Tag</a></li>
+    <li><a href="/deleteTag">Delete Tag</a></li>
+    <li><a href="/">Go back to Menu</a></li>
+  </ul>
+</nav>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Tag Id</th>
+    <th>Tag Name</th>
+  </tr>
+  </thead>
+  <tr th:each=" tag: ${displayTag}">
+    <td th:text="${tag.tagId}"></td>
+    <td th:text="${tag.tagName}"></td>
+  </tr>
+
+
+</table>
+
+</body>
+</html>

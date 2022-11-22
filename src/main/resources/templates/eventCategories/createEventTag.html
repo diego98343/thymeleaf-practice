@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" >
+  <div>
+    <label>
+      <input type="hidden"  th:field="${eventTagD.event}">
+      <select th:field="${eventTagD.eventTag}">
+        <option th:each="tag :${tags}"
+                th:value="${tag.tagId}"
+                th:text="${tag.tagName}"
+        ></option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <input type="submit" value="addTag">
+  </div>
+
+</form>
+</body>
+</html>

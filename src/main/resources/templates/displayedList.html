@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="/create">Create New Event</a> </li>
+        <li><a href="/delete">Delete Event </a></li>
+        <li><a href="/">go back to Menu</a></li>
+    </ul>
+</nav>
+
+<h1 th:text="${title}">ALL EVENTS </h1>
+
+<p th:unless="${events} and ${events.size()}">No Events Added Yet!</p>
+
+<h2>Search By</h2>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+          <th>ID</th>
+          <th> Name</th>
+          <th> Description</th>
+          <th>Email</th>
+          <th>Category</th>
+      </tr>
+    </thead>
+
+      <tr th:each="event:${events}">
+           <td th:text="${event.id}"></td>
+           <td><a th:href="'/events/?eventId='+${event.id}"  th:text="${event.name}"></a></td>
+           <td th:text="${event.eventDetails.description}"></td>
+           <td th:text="${event.eventDetails.contactEmail}"></td>
+          <td th:text="${event.eventCategory}"></td>
+      </tr>
+
+</table>
+</body>
+
+</html>

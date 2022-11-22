@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Category Name</th>
+    </tr>
+    </thead>
+    <tr th:each="category : ${categories}">
+        <td th:text="${category.id}"></td>
+        <td th:text="${category.name}"></td>
+    </tr>
+
+
+</table>
+<a href="/">Go back to Menu</a>
+<a href="/displayCreate">Create Category</a>
+<a href="/deleteCategory">Delete Category</a>
+</body>
+</html>

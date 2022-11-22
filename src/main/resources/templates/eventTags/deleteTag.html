@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>delete Tag</h1>
+<form method="post">
+  <th:block th:each="tag: ${deleteTagData}">
+    <div>
+      <label>
+        <span th:text="${tag.tagName}"></span>
+        <input type="checkbox" name="tagIds" th:value="${tag.tagId}">
+      </label>
+    </div>
+  </th:block>
+  <input type="submit" value="Delete">
+</form>
+</body>
+</html>
